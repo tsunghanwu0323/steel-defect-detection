@@ -1,0 +1,23 @@
+preprocessing:
+    input_train_set: './data/train.csv'
+    input_sub_set: './data/sample_submission.csv'
+    train_image_path: './data/train_images'
+    seed: 42
+    temp_train_path: './tmp/train'
+    temp_val_path: './tmp/val'
+    temp_test_path: './tmp/test'
+    sub_image_path: './data/test_images'
+    image_size: 256
+    batch_size: 32
+classification:
+  training:
+    classes:
+      - No Defect
+      - Defect
+    image_size: 256
+    batch_size: 32
+    epochs: 200
+  predicting:
+    classes:
+      - 'No Defect'
+      - 'Defect'

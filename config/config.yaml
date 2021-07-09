@@ -1,0 +1,26 @@
+preprocessing:
+  batch_size: 32
+  image_size: 256
+  input_sub_set: ./data/sample_submission.csv
+  input_train_set: ./data/train.csv
+  seed: 42
+  sub_image_path: ./data/test_images
+  temp_test_path: ./tmp/test
+  temp_train_path: ./tmp/train
+  temp_val_path: ./tmp/val
+  train_image_path: ./data/train_images
+classification:
+  predicting:
+    classes:
+    - No Defect
+    - Defect
+    save_model_path: ./trained model/
+  training:
+    batch_size: 32
+    classes:
+    - No Defect
+    - Defect
+    epochs: 200
+    image_size: 256
+    model_name: densenet
+    trained_model_path: ./trained model/densenet_model.h5
