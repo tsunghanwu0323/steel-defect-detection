@@ -1,6 +1,6 @@
 classification:
   training:
-    model_name: 'densenet'
+    model_name: 'vgg'
     trained_model_path: './trained model/densenet_model.h5'
   predicting:
     save_model_path: './trained model/'

@@ -131,7 +131,7 @@ class Preprocessor(object):
             directory=self.config['sub_image_path'],
             x_col='ImageId',
             class_mode=None,
-            target_size=(64, 64),
+            target_size=(self.config['image_size'], self.config['image_size']),
             batch_size=self.config['batch_size'],
             shuffle=False
         )

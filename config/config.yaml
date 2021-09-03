@@ -1,6 +1,6 @@
 preprocessing:
   batch_size: 32
-  image_size: 256
+  image_size: 224
   input_sub_set: ./data/sample_submission.csv
   input_train_set: ./data/train.csv
   seed: 42
@@ -21,6 +21,6 @@ classification:
     - No Defect
     - Defect
     epochs: 200
-    image_size: 256
-    model_name: densenet
-    trained_model_path: ./trained model/densenet_model.h5
+    image_size: 224
+    model_name: vgg
+    trained_model_path: ./trained model/severstal-classification-VGG.h5

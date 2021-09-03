@@ -95,5 +95,4 @@ def plot_roc_curve(y_true, y_pred):
     plt.xlabel('False Positive Rate')
     plt.ylabel('True Positive Rate')
     plt.legend()
-
     plt.show()

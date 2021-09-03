@@ -41,14 +41,10 @@ if __name__ == '__main__':
             model, history = classifier.train(train_gen, val_gen, df_train, df_val)
 
             print('Predicting on part of test set...')
-            classifier.predict(model, test_gen, df_test)
+            # classifier.predict(model, test_gen, df_test)
 
             print('Predicting on whole test set and create submission file...')
             classifier.predict(model, sub_gen, df_sub, sub=True)
 
-
         except yaml.YAMLError as error:
             logger.warning('Config file error: {}'.format(error))
-
-
-

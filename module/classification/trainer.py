@@ -1,4 +1,4 @@
-from module.classification.model import CNN, DenseNet
+from module.classification.model import CNN, DenseNet, VGG
 
 
 class Trainer:
@@ -13,6 +13,8 @@ class Trainer:
             self.model = CNN(self.config)
         elif self.config['model_name'] == 'densenet':
             self.model = DenseNet(self.config)
+        elif self.config['model_name'] == 'vgg':
+            self.model = VGG(self.config)
 
     def train(self, train_gen, val_gen, df_train, df_val):
         history = self.model.fit(train_gen, val_gen, df_train, df_val)
