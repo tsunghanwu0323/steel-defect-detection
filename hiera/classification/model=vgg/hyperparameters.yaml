@@ -3,7 +3,7 @@ preprocessing:
 classification:
   training:
     model_name: 'vgg'
-    trained_model_path: './trained model/severstal-classification-VGG.h5'
+    trained_model_path: './trained_model/vgg_model.h5'
     image_size: 224
   predicting:
-    save_model_path: './trained model/'
+    save_model_path: './trained_model/'

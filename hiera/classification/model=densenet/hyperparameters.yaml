@@ -1,6 +1,13 @@
 classification:
   training:
-    model_name: 'vgg'
-    trained_model_path: './trained model/densenet_model.h5'
+    model_name: 'densenet'
+    trained_model_path: './trained_model/densenet_model.h5'
   predicting:
-    save_model_path: './trained model/'
+    save_model_path: './trained_model/'
+segmentation:
+  predicting:
+    model_name: 'UNet'
+    save_model_path: './trained_model/unet_model.h5'
+    test_image_path: './data/test_images'
+    channels: 1
+    submission_file_path: 'submission-ncseverstalsegmentationunetdataaugloss.csv'

@@ -4,7 +4,6 @@ from tensorflow.keras import Sequential
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout, BatchNormalization
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
-
 from sklearn.metrics import classification_report
 
 
@@ -115,5 +114,5 @@ class CNN(object):
             return None, y_pred
 
     def save_model(self, path):
-        filename = "severstal-classification-CNNbase" + "-" + datetime.now().strftime("%Y-%m-%d-%H-%M-%S") + ".h5"
+        filename = "cnn_model.h5"
         self.model.save(path + filename, save_format='h5')

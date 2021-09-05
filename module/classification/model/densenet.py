@@ -19,7 +19,7 @@ class DenseNet(object):
         densenet = DenseNet121(
             include_top=False,
             input_shape=(256, 256, 3),
-            weights='./trained model/DenseNet-BC-121-32-no-top.h5'
+            weights='imagenet'
         )
         model = Sequential()
         model.add(densenet)
@@ -94,5 +94,5 @@ class DenseNet(object):
             return None, y_pred
 
     def save_model(self, path):
-        filename = "severstal-classification-DenseNetbase" + "-" + datetime.now().strftime("%Y-%m-%d-%H-%M-%S") + ".h5"
+        filename = "densenet_model.h5"
         self.model.save(path + filename, save_format='h5')

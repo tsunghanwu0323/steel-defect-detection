@@ -1,2 +1,4 @@
-from .preprocessor import Preprocessor
 from .classification import Classifier
+from .classification_preprocessor import ClassificationPreprocessor
+from .segmentation_preprocessor import SegmentationPreprocessor
+from .segmentation import Predictor

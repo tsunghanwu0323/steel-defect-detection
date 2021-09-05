@@ -1,6 +1,6 @@
 classification:
   training:
     model_name: 'cnn'
-    trained_model_path: './trained model/cnn_model.h5'
+    trained_model_path: './trained_model/cnn_model.h5'
   predicting:
-    save_model_path: './trained model/'
+    save_model_path: './trained_model/'

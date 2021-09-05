@@ -6,6 +6,44 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
+def mask2rle(img):
+    """
+    img: numpy array, 1 - mask, 0 - background
+    Returns run length as string formated
+    """
+    pixels = img.T.flatten()
+    pixels = np.concatenate([[0], pixels, [0]])
+    runs = np.where(pixels[1:] != pixels[:-1])[0] + 1
+    runs[1::2] -= runs[::2]
+    return ' '.join(str(x) for x in runs)
+
+
+def rle2mask(rle, input_shape):
+    width, height = input_shape[:2]
+
+    mask = np.zeros(width * height).astype(np.unit8)
+
+    array = np.asarray([int(x) for x in rle.split()])
+    starts = array[0::2]
+    starts -= 1
+    lengths = array[1::2]
+
+    current_position = 0
+    for index, start in enumerate(starts):
+        mask[int(start):int(start + lengths[index])] = 1
+        current_position += lengths[index]
+
+    return mask.reshape(height, width).T
+
+
+def build_rles(masks):
+    width, height, depth = masks.shape
+
+    rles = [mask2rle(masks[:, :, i]) for i in range(depth)]
+
+    return rles
+
+
 def setup_gpu():
     # check and set up using GPU for training
     gpus = tf.config.experimental.list_physical_devices('GPU')
